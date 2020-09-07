@@ -34,10 +34,14 @@
       justify-content: center;
     }
 
-    li:hover {
+    li:not(.copied):hover {
       cursor: pointer;
       box-shadow: none !important;
       text-decoration: underline;
+    }
+
+    li.copied {
+      cursor: pointer;
     }
 
     a.a-button {
@@ -148,7 +152,8 @@
       'rgba(67, 71, 85, 0.27) 0 0 .25em, rgba(90, 125, 188, 0.05) 0 .25em 1em',
       'rgba(0,0,0,.1) 0 1px 2px 0',
       'rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset',
-      'rgba(3, 102, 214, 0.3) 0 0 0 3px'
+      'rgba(3, 102, 214, 0.3) 0 0 0 3px',
+      'rgba(14, 30, 37, 0.12) 0 2px 4px 0, rgba(14, 30, 37, 0.32) 0 2px 16px 0'
     ]
 
     for (let i = 0; i < shadows.length; i++) {
@@ -160,12 +165,12 @@
 
       li.addEventListener('click', function (e) {
         const previousText = e.target.textContent
-        e.target.style.background = '#eee'
+        e.target.classList.add('copied')
         copyToClipboard(`box-shadow: ${li.style.boxShadow};`)
         e.target.textContent = 'Copied!'
         setTimeout(() => {
           e.target.textContent = previousText
-          e.target.style.background = '#fff'
+          e.target.classList.remove('copied')
         }, 1000)
       })
     }
