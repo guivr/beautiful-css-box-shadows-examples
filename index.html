@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Beautiful CSS box-shadows examples</title>
+  <style>
+    body {
+      background: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+      text-align: center;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 4em 0;
+      width: 100%;
+      margin: 0;
+      justify-content: center;
+    }
+
+    li {
+      border-radius: 6px;
+      margin: 3.5em;
+      padding: 1em;
+      flex: 0 0 100px;
+      height: 100px;
+      display: block;
+      background: #fff;
+      transition: all 300ms;
+      color: #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    li:hover {
+      cursor: pointer;
+      box-shadow: none !important;
+      text-decoration: underline;
+    }
+
+    a.a-button {
+      background-color: transparent;
+      color: #000000;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Inter-UI-Medium,Arial,Roboto,sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 32px;
+      padding: 0 8px;
+      text-decoration: none;
+      user-select: none;
+      border-radius: 6px;
+      transition: all 150ms;
+    }
+
+    a.a-button:hover {
+      text-decoration: underline;
+      background-color: #F3F3F3;
+    }
+
+    a.a-button .logo-img {
+      margin-left: 2px;
+      margin-right: 3px;
+      width: 20px;
+      height: auto;
+      vertical-align: sub;
+    }
+  </style>
+</head>
+<body>
+  <h1>Beautiful CSS box-shadows examples</h1>
+  <p>Copied with <a class="a-button" href="https://getcssscan.com/?ref=beautifulboxshadows" target="_blank"><img src="https://d33wubrfki0l68.cloudfront.net/6da92d1f39c939204d13f67ec76e725362b41e70/55cb0/img/logo.png" alt="CSS Scan logo" class="logo-img"> CSS Scan</a></p>
+  <ul>
+  </ul>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script>
+    function copyToClipboard (value) {
+      const tempInput = document.createElement("textarea");
+      tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+      tempInput.value = value
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      return true;
+    }
+
+    const ul = document.querySelector('ul')
+    const shadows = [
+      'rgba(149, 157, 165, 0.2) 0 8px 24px',
+      '0 7px 29px 0 rgba(100,100,111,.2)',
+      'rgba(0,0,0,.15) 1.95px 1.95px 2.6px',
+      '0px 5px 15px rgba(0, 0, 0, 0.35)',
+      'rgba(0, 0, 0, 0.16) 0 1px 4px',
+      'rgba(0, 0, 0, 0.24) 0 3px 8px',
+      '0 2px 8px 0 rgba(99,99,99,.2)',
+      'rgba(0, 0, 0, 0.16) 0 1px 4px, #333 0 0 0 3px',
+      'rgba(0, 0, 0, 0.02) 0 1px 3px 0',
+      'rgba(0, 0, 0, 0.1) 0 4px 12px',
+      'rgba(0, 0, 0, 0.1) 0px 3.6px 3.7px, rgba(0, 0, 0, 0.15) 0px 12.1px 12.3px, rgba(0, 0, 0, 0.1) 0px -2px 4px, rgba(0, 0, 0, 0.15) 0px -12.1px 24px, rgba(0, 0, 0, 0.25) 0px 54px 55px',
+      'rgba(0, 0, 0, 0.05) 0 6px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px',
+      'rgba(0, 0, 0, 0.16) 0 10px 36px 0, rgba(0, 0, 0, 0.06) 0 0 0 1px',
+      'rgba(17, 12, 46, 0.15) 0 48px 100px 0',
+      'rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset',
+      'rgba(255, 255, 255, 0.1) 0 1px 1px 0 inset, rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px',
+      'rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px',
+      '0 50px 100px -20px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)',
+      '0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3)',
+      '0 2px 5px -1px rgba(50,50,93,.25), 0 1px 3px -1px rgba(0,0,0,.3)',
+      '0 20px 30px -10px #26394d',
+      '0 0 0 2px rgba(6,24,44,.4), 0 4px 6px -1px rgba(6,24,44,.65), inset 0 1px 0 hsla(0,0%,100%,.08)',
+      '0 6px 12px -2px rgba(50,50,93,0.25),0 3px 7px -3px rgba(0,0,0,0.3)',
+      '0 13px 27px -5px rgba(50,50,93,0.25),0 8px 16px -8px rgba(0,0,0,0.3)',
+      '0 30px 60px -12px rgba(50,50,93,0.25),0 18px 36px -18px rgba(0,0,0,0.3)',
+      'inset 0 30px 60px -12px rgba(50,50,93,0.25),inset 0 18px 36px -18px rgba(0,0,0,0.3)',
+      '0 50px 100px -20px rgba(50,50,93,0.25),0 30px 60px -30px rgba(0,0,0,0.3)',
+      '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+      '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
+      '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
+      '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
+      '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)',
+      '0 0 0 1px rgba(0, 0, 0, 0.05)',
+      '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+      '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+      '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+      '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+      '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+      '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+      'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+      '0 0 5px 0 rgba(0, 0, 0, 0.1),0 0 1px 0 rgba(0, 0, 0, 0.1)',
+      '0 1px 2px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.07), 0 16px 32px rgba(0,0,0,0.07), 0 32px 64px rgba(0,0,0,0.07)',
+      '0 2px 1px rgba(0,0,0,0.09), 0 4px 2px rgba(0,0,0,0.09), 0 8px 4px rgba(0,0,0,0.09), 0 16px 8px rgba(0,0,0,0.09), 0 32px 16px rgba(0,0,0,0.09)',
+      'rgba(0, 0, 0, 0.2) 0 18px 50px -10px',
+      'rgba(0, 0, 0, 0.1) 0 10px 50px',
+      'rgba(0, 0, 0, 0.04) 0 3px 5px',
+
+
+      // Aligator
+      '5px 5px rgba(240, 46, 170, 0.4), 10px 10px rgba(240, 46, 170, 0.3), 15px 15px rgba(240, 46, 170, 0.2), 20px 20px rgba(240, 46, 170, 0.1), 25px 25px rgba(240, 46, 170, 0.05)',
+      '0 5px rgba(240, 46, 170, 0.4), 0 10px rgba(240, 46, 170, 0.3), 0 15px rgba(240, 46, 170, 0.2), 0 20px rgba(240, 46, 170, 0.1), 0 25px rgba(240, 46, 170, 0.05)',
+      '-5px 5px rgba(240, 46, 170, 0.4), -10px 10px rgba(240, 46, 170, 0.3), -15px 15px rgba(240, 46, 170, 0.2), -20px 20px rgba(240, 46, 170, 0.1), -25px 25px rgba(240, 46, 170, 0.05)',
+
+      'rgba(0, 0, 0, 0.07) 0 1px 1px, rgba(0, 0, 0, 0.07) 0 2px 2px, rgba(0, 0, 0, 0.07) 0 4px 4px, rgba(0, 0, 0, 0.07) 0 8px 8px, rgba(0, 0, 0, 0.07) 0 16px 16px',
+      'rgba(67, 71, 85, 0.27) 0 0 .25em, rgba(90, 125, 188, 0.05) 0 .25em 1em',
+      'rgba(0,0,0,.1) 0 1px 2px 0',
+      'rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset',
+      'rgba(3, 102, 214, 0.3) 0 0 0 3px'
+    ]
+
+    for (let i = 0; i < shadows.length; i++) {
+      const li = document.createElement('li')
+      li.textContent = `#${i}`
+      li.style.boxShadow = shadows[i]
+      li.dataset.tippyContent = `Click to copy box-shadow #${i}`
+      ul.appendChild(li)
+
+      li.addEventListener('click', function (e) {
+        const previousText = e.target.textContent
+        e.target.style.background = '#eee'
+        copyToClipboard(`box-shadow: ${li.style.boxShadow};`)
+        e.target.textContent = 'Copied!'
+        setTimeout(() => {
+          e.target.textContent = previousText
+          e.target.style.background = '#fff'
+        }, 1000)
+      })
+    }
+
+    tippy.delegate('body', {
+      target: '[data-tippy-content]',
+    });
+  </script>
+</body>
