@@ -3,11 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>Beautiful CSS box-shadows examples</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <style>
     body {
       background: #fff;
       font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
       text-align: center;
+      padding-top: 2em;
     }
 
     ul {
@@ -16,13 +18,13 @@
       padding: 4em 0;
       width: 100%;
       margin: 0;
-      justify-content: center;
+      justify-content: space-around;
     }
 
     li {
       border-radius: 6px;
-      margin: 3.5em;
       padding: 1em;
+      margin: 2em;
       flex: 0 0 100px;
       height: 100px;
       display: block;
@@ -71,6 +73,19 @@
       width: 20px;
       height: auto;
       vertical-align: sub;
+    }
+
+    @media screen and (min-width: 768px) {
+      ul {
+        padding: 4em 0;
+      }
+
+      li {
+        margin: 3.5em;
+        padding: 1em;
+        flex: 0 0 150px;
+        height: 150px;
+      }
     }
   </style>
 </head>
