@@ -459,7 +459,7 @@
         const previousHTML = e.target.innerHTML
         e.target.classList.add('copied')
         copyToClipboard(`box-shadow: ${li.style.boxShadow};`)
-        e.target.textContent = 'Copied!'
+        e.target.innerHTML = 'Copied!'
         setTimeout(() => {
           e.target.innerHTML = previousHTML
           e.target.classList.remove('copied')
