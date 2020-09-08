@@ -173,8 +173,6 @@
   <p>Copied with <a class="a-button" href="https://getcssscan.com/?ref=beautifulboxshadows" target="_blank" data-tippy-content="CSS Scan: Check the CSS of any element you hover over, instantly, and copy its entire rules and selector with a single click."><img src="https://d33wubrfki0l68.cloudfront.net/6da92d1f39c939204d13f67ec76e725362b41e70/55cb0/img/logo.png" alt="CSS Scan logo" class="logo-img"> CSS Scan</a></p>
   <ul>
   </ul>
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
-  <script src="https://unpkg.com/tippy.js@6"></script>
   <script>
     function copyToClipboard (value) {
       const tempInput = document.createElement("textarea");
@@ -503,7 +501,10 @@
     for (let i = 0; i < shadows.length; i++) {
       
     }
-
+  </script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script>
     tippy.delegate('body', {
       target: '[data-tippy-content]',
     });
