@@ -34,16 +34,27 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
     }
 
     li:not(.copied):hover {
       cursor: pointer;
       /* box-shadow: none !important; */
+    }
+
+    li:not(.copied):hover :not(.credits) {
       text-decoration: underline;
     }
 
     li.copied {
       cursor: pointer;
+    }
+
+    li .credits {
+      font-size: .7em;
+      opacity: .85;
+      display: block;
+      padding-top: 1em;
     }
 
     a.a-button {
@@ -134,7 +145,7 @@
 </head>
 <body>
   <h1>Beautiful CSS box-shadows examples</h1>
-  <p>Copied with <a class="a-button" href="https://getcssscan.com/?ref=beautifulboxshadows" target="_blank" data-tippy-content="CSS Scan: Check the CSS of any element you hover over, instantly."><img src="https://d33wubrfki0l68.cloudfront.net/6da92d1f39c939204d13f67ec76e725362b41e70/55cb0/img/logo.png" alt="CSS Scan logo" class="logo-img"> CSS Scan</a></p>
+  <p>Copied with <a class="a-button" href="https://getcssscan.com/?ref=beautifulboxshadows" target="_blank" data-tippy-content="CSS Scan: Check the CSS of any element you hover over, instantly. And copy all of its rules with a single click."><img src="https://d33wubrfki0l68.cloudfront.net/6da92d1f39c939204d13f67ec76e725362b41e70/55cb0/img/logo.png" alt="CSS Scan logo" class="logo-img"> CSS Scan</a></p>
   <ul>
   </ul>
   <script src="https://unpkg.com/@popperjs/core@2"></script>
@@ -161,20 +172,46 @@
       'rgba(0, 0, 0, 0.24) 0 3px 8px',
       '0 2px 8px 0 rgba(99,99,99,.2)',
       'rgba(0, 0, 0, 0.16) 0 1px 4px, #333 0 0 0 3px',
-      'rgba(0, 0, 0, 0.02) 0 1px 3px 0',
+      'rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px',
       'rgba(0, 0, 0, 0.1) 0 4px 12px',
       'rgba(0, 0, 0, 0.1) 0px 3.6px 3.7px, rgba(0, 0, 0, 0.15) 0px 12.1px 12.3px, rgba(0, 0, 0, 0.1) 0px -2px 4px, rgba(0, 0, 0, 0.15) 0px -12.1px 24px, rgba(0, 0, 0, 0.25) 0px 54px 55px',
       'rgba(0, 0, 0, 0.05) 0 6px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px',
       'rgba(0, 0, 0, 0.16) 0 10px 36px 0, rgba(0, 0, 0, 0.06) 0 0 0 1px',
       'rgba(17, 12, 46, 0.15) 0 48px 100px 0',
-      'rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset',
-      'rgba(255, 255, 255, 0.1) 0 1px 1px 0 inset, rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px',
-      'rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px',
-      '0 50px 100px -20px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)',
-      '0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3)',
-      '0 2px 5px -1px rgba(50,50,93,.25), 0 1px 3px -1px rgba(0,0,0,.3)',
-      '0 20px 30px -10px #26394d',
-      '0 0 0 2px rgba(6,24,44,.4), 0 4px 6px -1px rgba(6,24,44,.65), inset 0 1px 0 hsla(0,0%,100%,.08)',
+
+      // Stripe
+      {
+        boxShadow: 'rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset',
+        credits: 'Stripe',
+      },
+      {
+        boxShadow: 'rgba(255, 255, 255, 0.1) 0 1px 1px 0 inset, rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px',
+        credits: 'Stripe',
+      },
+      {
+        boxShadow: 'rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px',
+        credits: 'Stripe',
+      },
+      {
+        boxShadow: '0 50px 100px -20px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)',
+        credits: 'Stripe',
+      },
+      {
+        boxShadow: '0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3)',
+        credits: 'Stripe',
+      },
+      {
+        boxShadow: '0 2px 5px -1px rgba(50,50,93,.25), 0 1px 3px -1px rgba(0,0,0,.3)',
+        credits: 'Stripe',
+      },
+      {
+        boxShadow: '0 20px 30px -10px #26394d',
+        credits: 'Stripe',
+      },
+      {
+        boxShadow: '0 0 0 2px rgba(6,24,44,.4), 0 4px 6px -1px rgba(6,24,44,.65), inset 0 1px 0 hsla(0,0%,100%,.08)',
+        credits: 'Stripe',
+      },
       '0 6px 12px -2px rgba(50,50,93,0.25),0 3px 7px -3px rgba(0,0,0,0.3)',
       '0 13px 27px -5px rgba(50,50,93,0.25),0 8px 16px -8px rgba(0,0,0,0.3)',
       '0 30px 60px -12px rgba(50,50,93,0.25),0 18px 36px -18px rgba(0,0,0,0.3)',
@@ -200,23 +237,50 @@
       'rgba(0, 0, 0, 0.1) 0 10px 50px',
 
 
-      // Aligator
-      '-5px 5px rgba(240, 46, 170, 0.4), -10px 10px rgba(240, 46, 170, 0.3), -15px 15px rgba(240, 46, 170, 0.2), -20px 20px rgba(240, 46, 170, 0.1), -25px 25px rgba(240, 46, 170, 0.05)',
-      '0 5px rgba(240, 46, 170, 0.4), 0 10px rgba(240, 46, 170, 0.3), 0 15px rgba(240, 46, 170, 0.2), 0 20px rgba(240, 46, 170, 0.1), 0 25px rgba(240, 46, 170, 0.05)',
-      '5px 5px rgba(240, 46, 170, 0.4), 10px 10px rgba(240, 46, 170, 0.3), 15px 15px rgba(240, 46, 170, 0.2), 20px 20px rgba(240, 46, 170, 0.1), 25px 25px rgba(240, 46, 170, 0.05)',
+      // Alligator
+      {
+        boxShadow: '-5px 5px rgba(240, 46, 170, 0.4), -10px 10px rgba(240, 46, 170, 0.3), -15px 15px rgba(240, 46, 170, 0.2), -20px 20px rgba(240, 46, 170, 0.1), -25px 25px rgba(240, 46, 170, 0.05)',
+        credits: 'Alligator'
+      },
+      {
+        boxShadow: '0 5px rgba(240, 46, 170, 0.4), 0 10px rgba(240, 46, 170, 0.3), 0 15px rgba(240, 46, 170, 0.2), 0 20px rgba(240, 46, 170, 0.1), 0 25px rgba(240, 46, 170, 0.05)',
+        credits: 'Alligator'
+      },
+      {
+        boxShadow: '5px 5px rgba(240, 46, 170, 0.4), 10px 10px rgba(240, 46, 170, 0.3), 15px 15px rgba(240, 46, 170, 0.2), 20px 20px rgba(240, 46, 170, 0.1), 25px 25px rgba(240, 46, 170, 0.05)',
+        credits: 'Alligator'
+      },
 
       'rgba(0, 0, 0, 0.04) 0 3px 5px',
       'rgba(0, 0, 0, 0.07) 0 1px 1px, rgba(0, 0, 0, 0.07) 0 2px 2px, rgba(0, 0, 0, 0.07) 0 4px 4px, rgba(0, 0, 0, 0.07) 0 8px 8px, rgba(0, 0, 0, 0.07) 0 16px 16px',
-      'rgba(67, 71, 85, 0.27) 0 0 .25em, rgba(90, 125, 188, 0.05) 0 .25em 1em',
+      {
+        boxShadow: 'rgba(67, 71, 85, 0.27) 0 0 .25em, rgba(90, 125, 188, 0.05) 0 .25em 1em',
+        credits: 'pqina.nl/doka',
+      },
       'rgba(0,0,0,.1) 0 1px 2px 0',
-      'rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset',
-      'rgba(3, 102, 214, 0.3) 0 0 0 3px',
+      {
+        boxShadow: 'rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset',
+        credits: 'Github',
+      },
+      {
+        boxShadow: 'rgba(3, 102, 214, 0.3) 0 0 0 3px',
+        credits: 'Github',
+      },
       'rgba(14, 30, 37, 0.12) 0 2px 4px 0, rgba(14, 30, 37, 0.32) 0 2px 16px 0',
-      '0 12px 28px 0 rgba(0, 0, 0, 0.2),0 2px 4px 0 rgba(0, 0, 0, 0.1),inset 0 0 0 1px rgba(255, 255, 255, 0.05)',
+      {
+        boxShadow: '0 12px 28px 0 rgba(0, 0, 0, 0.2),0 2px 4px 0 rgba(0, 0, 0, 0.1),inset 0 0 0 1px rgba(255, 255, 255, 0.05)',
+        credits: 'Facebook',
+      },
 
       //shopify
-      'rgba(0, 0, 0, 0.15) 0 5px 15px 0',
-      'rgba(33, 35, 38, 0.1) 0 10px 10px -10px',
+      {
+        boxShadow: 'rgba(0, 0, 0, 0.15) 0 5px 15px 0',
+        credits: 'Shopify'
+      },
+      {
+        boxShadow: 'rgba(33, 35, 38, 0.1) 0 10px 10px -10px',
+        credits: 'Shopify'
+      },
 
       //fossheim
       {
@@ -224,29 +288,87 @@
         extra: {
           borderRadius: 0,
           border: '2px solid blue',
-        }
+        },
+        credits: 'Fossheim'
       },
 
       {
         boxShadow: 'rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px',
         extra: {
           borderRadius: 0
-        }
-      }
+        },
+        credits: 'Fossheim'
+      },
+
+      //boxshadows.com
+      {
+        boxShadow: '3px 3px 6px 0px #CCDBE8 inset, -3px -3px 6px 1px rgba(255,255,255,0.5) inset',
+        credits: 'boxshadows.com'
+      },
+      {
+        boxShadow: '6px 2px 16px 0px rgba(136, 165, 191, 0.48) , -6px -2px 16px 0px rgba(255, 255, 255, 0.8)',
+        credits: 'boxshadows.com'
+      },
+
+      //box-shadows.co
+      {
+        boxShadow: '0px 1px 0px rgba(17,17,26,0.1)',
+        credits: 'box-shadows.co'
+      },
+      {
+        boxShadow: '0px 1px 0px rgba(17,17,26,0.05), 0px 0px 8px rgba(17,17,26,0.1)',
+        credits: 'box-shadows.co'
+      },
+      {
+        boxShadow: '0px 1px 0px rgba(17,17,26,0.05), 0px 0px 8px rgba(17,17,26,0.1)',
+        credits: 'box-shadows.co'
+      },
+      {
+        boxShadow: '0px 0px 16px rgba(17,17,26,0.1)',
+        credits: 'box-shadows.co'
+      },
+      {
+        boxShadow: '0px 4px 16px rgba(17,17,26,0.05), 0px 8px 32px rgba(17,17,26,0.05)',
+        credits: 'box-shadows.co'
+      },
+      {
+        boxShadow: '0px 4px 16px rgba(17,17,26,0.1), 0px 8px 32px rgba(17,17,26,0.05)',
+        credits: 'box-shadows.co'
+      },
+      {
+        boxShadow: '0px 1px 0px rgba(17,17,26,0.1), 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 48px rgba(17,17,26,0.1)',
+        credits: 'box-shadows.co'
+      },
+      {
+        boxShadow: '0px 4px 16px rgba(17,17,26,0.1), 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 56px rgba(17,17,26,0.1)',
+        credits: 'box-shadows.co'
+      },
+      {
+        boxShadow: '0px 8px 24px rgba(17,17,26,0.1), 0px 16px 56px rgba(17,17,26,0.1), 0px 24px 80px rgba(17,17,26,0.1)',
+        credits: 'box-shadows.co'
+      },
     ]
 
-    for (let i = 0; i < shadows.length; i++) {
+    async function addShadow (shadow) {
       const li = document.createElement('li')
-      if (typeof shadows[i] === 'object') {
-        li.style.boxShadow = shadows[i].boxShadow
-        for (let z = 0; z < Object.keys(shadows[i].extra).length; z++) {
-          li.style[Object.keys(shadows[i].extra)[z]] = shadows[i].extra[Object.keys(shadows[i].extra)[z]]
+      li.innerHTML = `<span>#${shadows.indexOf(shadow)}</span>`
+
+      if (typeof shadow === 'object') {
+        li.style.boxShadow = shadow.boxShadow
+
+        if (shadow.extra) {
+          for (let z = 0; z < Object.keys(shadow.extra).length; z++) {
+            li.style[Object.keys(shadow.extra)[z]] = shadow.extra[Object.keys(shadow.extra)[z]]
+          }
+        }
+        
+        if (shadow.credits) {
+          li.innerHTML += `<span class="credits">by ${shadow.credits}</span>`
         }
       } else {
-        li.style.boxShadow = shadows[i]
+        li.style.boxShadow = shadow
       }
-      li.textContent = `#${i}`
-      li.dataset.tippyContent = `Click to copy box-shadow #${i}`
+      li.dataset.tippyContent = `Click to copy box-shadow #${shadows.indexOf(shadow)}`
       ul.appendChild(li)
 
       li.addEventListener('click', function (e) {
@@ -259,6 +381,18 @@
           e.target.classList.remove('copied')
         }, 1000)
       })
+    }
+
+    async function processArray (array) {
+      for (const item of shadows) {
+        await addShadow(item);
+      }
+    }
+
+    processArray(shadows)
+
+    for (let i = 0; i < shadows.length; i++) {
+      
     }
 
     tippy.delegate('body', {
