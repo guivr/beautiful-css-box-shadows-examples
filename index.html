@@ -251,6 +251,16 @@
         credits: 'Material',
       },
 
+      
+      {
+        boxShadow: 'rgba(60, 64, 67, 0.3) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0 2px 6px 2px',
+        credits: 'Material',
+      },
+      {
+        boxShadow: 'rgba(60, 64, 67, 0.3) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0 1px 3px 1px',
+        credits: 'Material',
+      },
+
       {
         boxShadow: '0 0 0 1px rgba(0, 0, 0, 0.05)',
         credits: 'Tailwind CSS',
@@ -285,10 +295,22 @@
       },
 
       '0 0 5px 0 rgba(0, 0, 0, 0.1),0 0 1px 0 rgba(0, 0, 0, 0.1)',
-      '0 1px 2px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.07), 0 16px 32px rgba(0,0,0,0.07), 0 32px 64px rgba(0,0,0,0.07)',
-      '0 2px 1px rgba(0,0,0,0.09), 0 4px 2px rgba(0,0,0,0.09), 0 8px 4px rgba(0,0,0,0.09), 0 16px 8px rgba(0,0,0,0.09), 0 32px 16px rgba(0,0,0,0.09)',
-      'rgba(0, 0, 0, 0.2) 0 18px 50px -10px',
+
+      {
+        boxShadow: '0 1px 2px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.07), 0 16px 32px rgba(0,0,0,0.07), 0 32px 64px rgba(0,0,0,0.07)',
+        credits: 'Tobias Ahlin',
+      },
+      {
+        boxShadow: '0 2px 1px rgba(0,0,0,0.09), 0 4px 2px rgba(0,0,0,0.09), 0 8px 4px rgba(0,0,0,0.09), 0 16px 8px rgba(0,0,0,0.09), 0 32px 16px rgba(0,0,0,0.09)',
+        credits: 'Tobias Ahlin',
+      },
+
+      {
+        boxShadow: 'rgba(0, 0, 0, 0.2) 0 18px 50px -10px',
+        credits: 'feedback.fish',
+      },
       'rgba(0, 0, 0, 0.1) 0 10px 50px',
+      'rgba(0, 0, 0, 0.04) 0 3px 5px',
 
 
       // Alligator
@@ -305,7 +327,6 @@
         credits: 'Alligator'
       },
 
-      'rgba(0, 0, 0, 0.04) 0 3px 5px',
       'rgba(0, 0, 0, 0.07) 0 1px 1px, rgba(0, 0, 0, 0.07) 0 2px 2px, rgba(0, 0, 0, 0.07) 0 4px 4px, rgba(0, 0, 0, 0.07) 0 8px 8px, rgba(0, 0, 0, 0.07) 0 16px 16px',
       {
         boxShadow: 'rgba(67, 71, 85, 0.27) 0 0 .25em, rgba(90, 125, 188, 0.05) 0 .25em 1em',
@@ -338,10 +359,9 @@
 
       //fossheim
       {
-        boxShadow: '10px -10px 0 -3px #fff, 10px -10px #1FC11B, 20px -20px 0 -3px #fff, 20px -20px #FFD913, 30px -30px 0 -3px #fff, 30px -30px #FF9C55, 40px -40px 0 -3px #fff, 40px -40px #FF5555',
+        boxShadow: 'blue 0 0 0 2px, 10px -10px 0 -3px #fff, 10px -10px #1FC11B, 20px -20px 0 -3px #fff, 20px -20px #FFD913, 30px -30px 0 -3px #fff, 30px -30px #FF9C55, 40px -40px 0 -3px #fff, 40px -40px #FF5555',
         extra: {
           borderRadius: 0,
-          border: '2px solid blue',
         },
         credits: 'Fossheim'
       },
@@ -406,6 +426,11 @@
         boxShadow: 'rgba(50, 50, 105, 0.15) 0 2px 5px 0, rgba(0, 0, 0, 0.05) 0 1px 1px 0',
         credits: '10er.app',
       },
+
+      {
+        boxShadow: '0 15px 25px rgba(0, 0, 0, 0.15),0 5px 10px rgba(0, 0, 0, 0.05)',
+        credits: 'wip.chat'
+      }
     ]
 
     async function addShadow (shadow) {
@@ -431,12 +456,12 @@
       ul.appendChild(li)
 
       li.addEventListener('click', function (e) {
-        const previousText = e.target.textContent
+        const previousHTML = e.target.innerHTML
         e.target.classList.add('copied')
         copyToClipboard(`box-shadow: ${li.style.boxShadow};`)
         e.target.textContent = 'Copied!'
         setTimeout(() => {
-          e.target.textContent = previousText
+          e.target.innerHTML = previousHTML
           e.target.classList.remove('copied')
         }, 1000)
       })
