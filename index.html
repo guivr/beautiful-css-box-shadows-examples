@@ -38,7 +38,7 @@
 
     li:not(.copied):hover {
       cursor: pointer;
-      box-shadow: none !important;
+      /* box-shadow: none !important; */
       text-decoration: underline;
     }
 
@@ -134,7 +134,7 @@
 </head>
 <body>
   <h1>Beautiful CSS box-shadows examples</h1>
-  <p>Copied with <a class="a-button" href="https://getcssscan.com/?ref=beautifulboxshadows" target="_blank"><img src="https://d33wubrfki0l68.cloudfront.net/6da92d1f39c939204d13f67ec76e725362b41e70/55cb0/img/logo.png" alt="CSS Scan logo" class="logo-img"> CSS Scan</a></p>
+  <p>Copied with <a class="a-button" href="https://getcssscan.com/?ref=beautifulboxshadows" target="_blank" data-tippy-content="CSS Scan: Check the CSS of any element you hover over, instantly."><img src="https://d33wubrfki0l68.cloudfront.net/6da92d1f39c939204d13f67ec76e725362b41e70/55cb0/img/logo.png" alt="CSS Scan logo" class="logo-img"> CSS Scan</a></p>
   <ul>
   </ul>
   <script src="https://unpkg.com/@popperjs/core@2"></script>
@@ -212,13 +212,40 @@
       'rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset',
       'rgba(3, 102, 214, 0.3) 0 0 0 3px',
       'rgba(14, 30, 37, 0.12) 0 2px 4px 0, rgba(14, 30, 37, 0.32) 0 2px 16px 0',
-      '0 12px 28px 0 rgba(0, 0, 0, 0.2),0 2px 4px 0 rgba(0, 0, 0, 0.1),inset 0 0 0 1px rgba(255, 255, 255, 0.05)'
+      '0 12px 28px 0 rgba(0, 0, 0, 0.2),0 2px 4px 0 rgba(0, 0, 0, 0.1),inset 0 0 0 1px rgba(255, 255, 255, 0.05)',
+
+      //shopify
+      'rgba(0, 0, 0, 0.15) 0 5px 15px 0',
+      'rgba(33, 35, 38, 0.1) 0 10px 10px -10px',
+
+      //fossheim
+      {
+        boxShadow: '10px -10px 0 -3px #fff, 10px -10px #1FC11B, 20px -20px 0 -3px #fff, 20px -20px #FFD913, 30px -30px 0 -3px #fff, 30px -30px #FF9C55, 40px -40px 0 -3px #fff, 40px -40px #FF5555',
+        extra: {
+          borderRadius: 0,
+          border: '2px solid blue',
+        }
+      },
+
+      {
+        boxShadow: 'rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px',
+        extra: {
+          borderRadius: 0
+        }
+      }
     ]
 
     for (let i = 0; i < shadows.length; i++) {
       const li = document.createElement('li')
+      if (typeof shadows[i] === 'object') {
+        li.style.boxShadow = shadows[i].boxShadow
+        for (let z = 0; z < Object.keys(shadows[i].extra).length; z++) {
+          li.style[Object.keys(shadows[i].extra)[z]] = shadows[i].extra[Object.keys(shadows[i].extra)[z]]
+        }
+      } else {
+        li.style.boxShadow = shadows[i]
+      }
       li.textContent = `#${i}`
-      li.style.boxShadow = shadows[i]
       li.dataset.tippyContent = `Click to copy box-shadow #${i}`
       ul.appendChild(li)
 
