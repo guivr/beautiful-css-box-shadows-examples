@@ -724,7 +724,7 @@ header .buttons-wrapper {
 
     async function addShadow (shadow) {
       const li = document.createElement('li')
-      li.innerHTML = `<span>#${shadows.indexOf(shadow) + 1}</span>`
+      li.innerHTML = `<span>#${shadows.indexOf(shadow)}</span>`
 
       if (typeof shadow === 'object') {
         li.style.boxShadow = shadow.boxShadow
