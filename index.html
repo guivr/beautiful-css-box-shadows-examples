@@ -8,7 +8,7 @@
   <link rel="preload" as="font" href="css/webfonts/CerebriSans-SemiBold.woff2">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <meta name="description" content="Beautiful CSS box-shadow examples handpicked from the web." />
+  <meta name="description" content="🎨 Curated collection of 82 free beautiful CSS box-shadow." />
 
   <meta name="google-site-verification" content="ew6sCLhtuqPNEmD6yiFuOjn-xLmH5QXFHsHGM0j4_LA" />
 
@@ -17,13 +17,13 @@
   <meta property="og:image:height" content="500">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Beautiful CSS box-shadow examples - CSS Scan">
-  <meta property="og:description" content="Beautiful CSS box-shadow examples handpicked from the web.">
+  <meta property="og:description" content="🎨 Curated collection of 82 free beautiful CSS box-shadow.">
   <meta property="og:url" content="https://getcssscan.com/?ref=fb">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@gvrizzo">
   <meta name="twitter:title" content="Beautiful CSS box-shadow examples - CSS Scan">
-  <meta name="twitter:description" content="Beautiful CSS box-shadow examples handpicked from the web.">
+  <meta name="twitter:description" content="🎨 Curated collection of 82 free beautiful CSS box-shadow.">
   <meta name="twitter:image" content="https://getcssscan.com/css-box-shadows-examples/og-image.jpg">
 
 
@@ -740,13 +740,13 @@ header .buttons-wrapper {
       ul.appendChild(li)
 
       li.addEventListener('click', function (e) {
-        const previousHTML = e.target.innerHTML
-        e.target.classList.add('copied')
+        const previousHTML = li.innerHTML
+        li.classList.add('copied')
         copyToClipboard(`box-shadow: ${li.style.boxShadow};`)
-        e.target.innerHTML = 'Copied!'
+        li.innerHTML = 'Copied!'
         setTimeout(() => {
-          e.target.innerHTML = previousHTML
-          e.target.classList.remove('copied')
+          li.innerHTML = previousHTML
+          li.classList.remove('copied')
         }, 1000)
       })
     }
