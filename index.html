@@ -714,12 +714,17 @@ header .buttons-wrapper {
       {
         boxShadow: '0 60px 40px -7px rgba(0,0,0,.2)',
         credits: 'ls.graphics'
+      },
+
+      {
+        boxShadow: '0 30px 90px rgba(0,0,0,0.4)',
+        credits: 'Lonely Planet'
       }
     ]
 
     async function addShadow (shadow) {
       const li = document.createElement('li')
-      li.innerHTML = `<span>#${shadows.indexOf(shadow)}</span>`
+      li.innerHTML = `<span>#${shadows.indexOf(shadow) + 1}</span>`
 
       if (typeof shadow === 'object') {
         li.style.boxShadow = shadow.boxShadow
@@ -758,10 +763,6 @@ header .buttons-wrapper {
     }
 
     processArray(shadows)
-
-    for (let i = 0; i < shadows.length; i++) {
-      
-    }
   </script>
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="https://unpkg.com/tippy.js@6"></script>
