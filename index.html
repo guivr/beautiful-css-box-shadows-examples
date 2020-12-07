@@ -137,16 +137,14 @@
       color: #000000;
       cursor: pointer;
       display: inline-block;
-      font-family: Inter-UI-Medium,Arial,Roboto,sans-serif;
-      font-size: 14px;
-      font-weight: 500;
       line-height: 32px;
       padding: 0 8px;
       text-decoration: none;
       user-select: none;
       border-radius: 6px;
       transition: all 150ms;
-      margin-left: 10px;
+      margin-left: 5px;
+      margin-right: 5px;
     }
 
     a.a-button:hover {
@@ -441,6 +439,13 @@ a.no-underline {
 .toastlog {
   background: #FDD231;
 }
+
+.shortcut {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  padding: 5px;
+  margin: 0 5px;
+  border-radius: 4px;
+}
   </style>
   <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5f584b9905d2610012218b71&product=inline-share-buttons" async="async"></script>
 </head>
@@ -461,11 +466,20 @@ a.no-underline {
   </header>
   <h1>Beautiful CSS box-shadow examples</h1>
   <p>
-    All of these box-shadow were copied using <a class="a-button" href="https://getcssscan.com/?ref=beautifulboxshadow" target="_blank" data-tippy-content="CSS Scan: Check the CSS of any element you hover over, instantly, and copy its entire rules and selector with a single click."><img src="https://toastlog.com/img/logos/cssscan.svg" alt="CSS Scan logo" class="logo-img"> CSS Scan</a> (<a href="https://getcssscan.com/?ref=beautifulboxshadow2" target="_blank">click here</a> to try a free demo)</p>
+    All of these box-shadow were copied using <a class="a-button" href="https://getcssscan.com/?ref=beautifulboxshadow" target="_blank" data-tippy-content="CSS Scan: Check the CSS of any element you hover over, instantly, and copy its entire rules and selector with a single click."><img src="https://toastlog.com/img/logos/cssscan.svg" alt="CSS Scan logo" class="logo-img"> CSS Scan</a> (<a href="https://getcssscan.com/?ref=beautifulboxshadow2" target="_blank">click here</a> to try a free demo)<br>
+    With CSS Scan you can easily inspect or copy any website's CSS.
+  </p>
+    <p class="shortcuts-disclaimer">📌 Press <span class="shortcut">Ctrl+D</span> to bookmark this page</p>
   <div class="sharethis-inline-share-buttons" style="margin-top: 4em;"></div>
   <ul>
   </ul>
   <script>
+    const isMac = navigator.appVersion.indexOf("Mac") != -1
+
+    if (isMac) {
+      document.querySelector('.shortcuts-disclaimer .shortcut').textContent = '⌘+D'
+    }
+
     function copyToClipboard (value) {
       const tempInput = document.createElement("textarea");
       tempInput.style = "position: absolute; left: -1000px; top: -1000px";
