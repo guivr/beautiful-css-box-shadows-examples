@@ -365,3 +365,29 @@ footer a:hover {
   color: #999;
 }
 
+
+.cssscan-pro {
+  background: rgba(30, 32, 44, 0.95);
+  color: #fff;
+  margin-top: 2em;
+}
+
+.cssscan-pro * {
+  color: #fff !important;
+}
+
+.cssscan-pro img {
+  top: 5%;
+}
+
+.cssscan-pro:hover img {
+  top: 5%;
+}
+
+.gradient-text {
+  background-image: linear-gradient(rgba(42, 245, 152, 1) ,rgba(0, 158, 253, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 250%;
+  transition: 500ms background-position;
+}
