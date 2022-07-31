@@ -267,18 +267,37 @@ h3,
 
 .cssscan img {
   position: absolute;
-  top: 14%;
-  right: -37%;
-  width: 95%;
-  height: 95%;
   transform: rotate(-7deg);
   transition: all .3s;
 }
 
+.cssscan:not(.img-as-jpg) img {
+  top: 14%;
+  right: -37%;
+  width: 95%;
+  height: 95%;
+}
+
+.cssscan.img-as-jpg img {
+  position: absolute;
+  width: 20%;
+  height: auto;
+  right: 2%;
+  top: 10%;
+}
+
 .cssscan:hover img {
+  transform: scale(1.1) rotate(-7deg);
+}
+
+.cssscan:not(.img-as-jpg):hover img {
   top: 10%;
   right: -35%;
-  transform: scale(1.1) rotate(-7deg);
+}
+
+.cssscan.img-as-jpg:hover img {
+  top: 8%;
+  right: 4%;
 }
 
 .cssscan:hover p.learn-more {
@@ -346,23 +365,41 @@ p.learn-more {
     border-radius: 0;
   }
 
-  .cssscan img {
+  .cssscan:not(.img-as-jpg) img,
+  .cssscan.img-as-jpg img {
     top: initial;
     bottom: -14%;
-    right: -5%;
-    width: 45%;
-    height: 45%;
   }
 
-  .cssscan:hover img {
+  .cssscan.img-as-jpg img {
+    right: 5%;
+  }
+
+  .cssscan:not(.img-as-jpg) img {
+    width: 45%;
+    height: 45%;
+    right: -5%;
+  }
+
+  .cssscan.img-as-jpg img {
+    width: min(45%, 200px);
+    height: auto;
+  }
+
+  .cssscan:not(.img-as-jpg):hover img,
+  .cssscan.img-as-jpg:hover img {
     top: initial;
     bottom: -10%;
     right: -5%;
     transform: scale(1.1) rotate(-7deg);
   }
 
-  .cssscan-pro img,
-  .cssscan-pro:hover img {
+  .cssscan.img-as-jpg:hover img {
+    right: 5%;
+  }
+
+  .cssscan-pro:not(.img-as-jpg) img,
+  .cssscan-pro:not(.img-as-jpg):hover img {
     bottom: -4%;
   }
 }
@@ -945,11 +982,19 @@ a.green-btn-style:hover {
     </div>
   </a>
   <a class="cssscan-a" href="https://getcssscan.com/css-buttons-examples?ref=beautifulboxshadow-bottom" target="_blank">
-    <div class="cssscan buttons">
+    <div class="cssscan buttons img-as-jpg">
       <p class="title">Beautiful buttons examples</p>
       <p class="desc">80+ free beautiful CSS buttons, ready to use, click to copy.</p>
       <p class="learn-more">Learn more →</p>
-      <img src="https://getcssscan.com/css-box-shadow-examples/buttons.svg" alt="CSS box-shadow examples logo" style="border-radius: 10px;">
+      <img src="https://getcssscan.com/css-box-shadow-examples/buttons.jpg" alt="CSS box-shadow examples logo" style="border-radius: 10px;">
+    </div>
+  </a>
+  <a class="cssscan-a" href="https://getcssscan.com/css-shapes?ref=beautifulboxshadow-bottom" target="_blank">
+    <div class="cssscan box-shadow img-as-jpg">
+      <p class="title">CSS Shapes Examples</p>
+      <p class="desc">🔺 Triangles, arrows, diamonds, tooltip, bubbles, etc. 50+ free CSS shapes, ready-to-use, click to copy.</p>
+      <p class="learn-more">Learn more →</p>
+      <img src="https://getcssscan.com/css-shapes/shapes.jpg" alt="CSS box-shadow examples logo" style="border-radius: 10px;">
     </div>
   </a>
   <a class="cssscan-a" href="https://toastlog.com?ref=beautifulboxshadow-bottom" target="_blank">
