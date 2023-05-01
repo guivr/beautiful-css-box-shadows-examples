@@ -278,7 +278,7 @@ h3,
 
 .cssscan.img-as-jpg img {
   position: absolute;
-  width: 20%;
+  width: min(20%, 200px);
   height: auto;
   right: 2%;
   top: 10%;
@@ -327,25 +327,25 @@ p.learn-more {
   color: #333;
 }
 
-.cssscan-pro {
+.csspro {
   background: rgba(30, 32, 44, 0.95);
   color: #fff;
 }
 
-.cssscan-pro * {
+.csspro * {
   color: #fff !important;
 }
 
-.cssscan-pro img {
+.csspro img {
   top: 5%;
 }
 
-.cssscan-pro:hover img {
+.csspro:hover img {
   top: 5%;
 }
 
 .gradient-text {
-  background-image: linear-gradient(rgba(42, 245, 152, 1) ,rgba(0, 158, 253, 1));
+  background-image: linear-gradient(#FFFFFF 30%, #2D82A4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 250%;
@@ -371,10 +371,6 @@ p.learn-more {
     bottom: -14%;
   }
 
-  .cssscan.img-as-jpg img {
-    right: 5%;
-  }
-
   .cssscan:not(.img-as-jpg) img {
     width: 45%;
     height: 45%;
@@ -384,6 +380,8 @@ p.learn-more {
   .cssscan.img-as-jpg img {
     width: min(45%, 200px);
     height: auto;
+    right: 0%;
+    bottom: -10%;
   }
 
   .cssscan:not(.img-as-jpg):hover img,
@@ -398,8 +396,8 @@ p.learn-more {
     right: 5%;
   }
 
-  .cssscan-pro:not(.img-as-jpg) img,
-  .cssscan-pro:not(.img-as-jpg):hover img {
+  .csspro:not(.img-as-jpg) img,
+  .csspro:not(.img-as-jpg):hover img {
     bottom: -4%;
   }
 }
@@ -474,7 +472,7 @@ a.no-underline {
 }
 
 
-.cssscan-pro,
+.csspro,
 .buttons,
 .toastlog,
 .shapes,
@@ -1016,7 +1014,7 @@ a.green-btn-style:hover {
     </div>
   </a>
   <a class="cssscan-a" href="https://csspro.com?ref=beautifulboxshadow-bottom" target="_blank">
-    <div class="cssscan cssscan-pro img-as-jpg">
+    <div class="cssscan csspro img-as-jpg">
       <p class="title gradient-text">Introducing CSS Pro</p>
       <p class="desc">Make beautiful websites faster</p>
       <p class="learn-more">Learn more →</p>
