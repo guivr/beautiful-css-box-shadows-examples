@@ -952,11 +952,26 @@ a.green-btn-style:hover {
 
     processArray(shadows)
   </script>
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
-  <script src="https://unpkg.com/tippy.js@6"></script>
   <script>
-    tippy.delegate('body', {
-      target: '[data-tippy-content]',
+    // Function to load a script dynamically
+    function loadScript(url, callback) {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = url;
+      script.async = true;
+      script.onload = callback;  // Call callback function when the script is loaded
+      document.head.appendChild(script);  // Append the script to the head
+    }
+  
+    // Load Popper.js first
+    loadScript('https://unpkg.com/@popperjs/core@2', function() {
+      // Load Tippy.js after Popper.js is loaded
+      loadScript('https://unpkg.com/tippy.js@6', function () {
+        // Create tippy instance after Tippy.js is loaded
+        tippy.delegate('body', {
+          target: '[data-tippy-content]',
+        });
+      });
     });
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJYYZC87DK"></script>
@@ -1040,5 +1055,7 @@ a.green-btn-style:hover {
       <img src="https://csspro.com/svg-to-background-image-css/square.jpg" alt="Convert SVG to background-image page logo" style="border-radius: 10px;" loading="lazy">
     </div>
   </a>
+
+
 
 </body>
