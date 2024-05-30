@@ -78,7 +78,7 @@
       color: #000;
     }
 
-    ul {
+    ul#main-ul {
       display: flex;
       flex-wrap: wrap;
       padding: 4em 0;
@@ -88,7 +88,7 @@
       justify-content: space-around;
     }
 
-    li {
+    #main-ul li {
       border-radius: 6px;
       padding: 1em;
       margin: 2em;
@@ -105,20 +105,20 @@
       overflow: hidden;
     }
 
-    li:not(.copied):hover {
+    #main-ul li:not(.copied):hover {
       cursor: pointer;
       /* box-shadow: none !important; */
     }
 
-    li:not(.copied):hover :not(.credits) {
+    #main-ul li:not(.copied):hover :not(.credits) {
       text-decoration: underline;
     }
 
-    li.copied {
+    #main-ul li.copied {
       cursor: pointer;
     }
 
-    li .credits {
+    #main-ul li .credits {
       font-size: .7em;
       opacity: .85;
       display: block;
@@ -182,7 +182,7 @@
     }
 
     @media all and (min-width: 375px) {
-      li {
+      #main-ul li {
         flex: 0 0 22vw;
         height: 22vw;
       }
@@ -194,11 +194,11 @@
 
 
     @media all and (min-width: 768px) {
-      ul {
+      ul#main-ul {
         padding: 4em 0;
       }
 
-      li {
+      #main-ul li {
         margin: 2.7em;
         padding: 1em;
         flex: 0 0 110px;
@@ -215,7 +215,7 @@
     }
 
     @media all and (min-width: 1024px) {
-      li {
+      #main-ul li {
         margin: 3.5em;
         flex: 0 0 150px;
         height: 150px;
@@ -511,6 +511,224 @@ a.green-btn-style:hover {
   background: #afe6c3;
   transform: scale(1.05);
 }
+
+.testimonials h3 {
+  font-size: 1.9em;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.testimonials {
+  margin: 4em 0 8em;
+  padding: 0 10%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.testimonials-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.testimonial-card {
+  -webkit-box-shadow: rgba(0,12,32,.04) 0 0 1px 0,rgba(10,31,68,.06) 0 10px 16px 0;
+          box-shadow: rgba(0,12,32,.04) 0 0 1px 0,rgba(10,31,68,.06) 0 10px 16px 0;
+  background-color: #333;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  height: 250px;
+  margin: .5rem;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: 500ms;
+  -o-transition: 500ms;
+  transition: 500ms;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 0;
+}
+
+.testimonial-card a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.testimonial-card a:hover {
+  text-decoration: underline;
+}
+
+.testimonial-card#brad {
+  background-image: -webkit-gradient(linear,left top, left bottom,color-stop(0%, rgba(0,0,0,0)),to(rgba(0,0,0,.9))),url(https://getcssscan.com/img/faces/brad-min.jpg);
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/brad-min.jpg);
+  background-image: -o-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/brad-min.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/brad-min.jpg);
+}
+
+.testimonial-card#awais {
+  background-image: -webkit-gradient(linear,left top, left bottom,color-stop(0%, rgba(0,0,0,0)),to(rgba(0,0,0,.9))),url(https://getcssscan.com/img/faces/awais-min.jpg);
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/awais-min.jpg);
+  background-image: -o-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/awais-min.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/awais-min.jpg);
+}
+
+.testimonial-card#joulse {
+  background-image: -webkit-gradient(linear,left top, left bottom,color-stop(0%, rgba(0,0,0,0)),to(rgba(0,0,0,.9))),url(https://getcssscan.com/img/faces/joulse-min.jpg);
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/joulse-min.jpg);
+  background-image: -o-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/joulse-min.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/joulse-min.jpg);
+}
+
+.testimonial-card#flavio {
+  background-image: -webkit-gradient(linear,left top, left bottom,color-stop(0%, rgba(0,0,0,0)),to(rgba(0,0,0,.9))),url(https://getcssscan.com/img/faces/flavio.jpg);
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/flavio.jpg);
+  background-image: -o-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/flavio.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/flavio.jpg);
+}
+
+.testimonial-card#harry {
+  background-image: -webkit-gradient(linear,left top, left bottom,color-stop(0%, rgba(0,0,0,0)),to(rgba(0,0,0,.9))),url(https://getcssscan.com/img/faces/harry.jpg);
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/harry.jpg);
+  background-image: -o-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/harry.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/harry.jpg);
+}
+
+.testimonial-card#max {
+  background-image: -webkit-gradient(linear,left top, left bottom,color-stop(0%, rgba(0,0,0,0)),to(rgba(0,0,0,.9))),url(https://getcssscan.com/img/faces/max.jpeg);
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/max.jpeg);
+  background-image: -o-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/max.jpeg);
+  background-image: linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/max.jpeg);
+}
+
+.testimonial-card#joe {
+  background-image: -webkit-gradient(linear,left top, left bottom,color-stop(0%, rgba(0,0,0,0)),to(rgba(0,0,0,.9))),url(https://getcssscan.com/img/faces/joe.jpeg);
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/joe.jpeg);
+  background-image: -o-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/joe.jpeg);
+  background-image: linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/joe.jpeg);
+}
+
+.testimonial-card#anne {
+  background-image: -webkit-gradient(linear,left top, left bottom,color-stop(0%, rgba(0,0,0,0)),to(rgba(0,0,0,.9))),url(https://getcssscan.com/img/faces/anne.jpeg);
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/anne.jpeg);
+  background-image: -o-linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/anne.jpeg);
+  background-image: linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.9)),url(https://getcssscan.com/img/faces/anne.jpeg);
+}
+
+.testimonial-body {
+  padding: 0 1.2em .6em;
+  font-size: .92em;
+}
+
+.testimonial-quote,
+.testimonial-author {
+  margin-bottom: .5em;
+}
+
+.testimonial-author {
+  font-size: .8em;
+  margin-top: 0;
+}
+
+.producthunt-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin: 3em 0;
+}
+
+.producthunt-badge-wrapper img {
+  width: 122px;
+  height: 37px;
+}
+
+.testimonials .subtitle {
+  text-align: center;
+  color: #666;
+  max-width: 600px;
+  margin: 1.5em auto 2.2em;
+}
+
+.stars {
+  margin-top: 1em;
+  display: block;
+}
+
+.stars svg {
+  color: #ddaf13;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -.125em;
+}
+
+@media all and (min-width: 768px) {
+  .testimonials {
+    max-width: 1050px;
+  }
+
+  .testimonials-list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .testimonial-card {
+    height: 325px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 calc(50% - 1rem);
+            flex: 0 1 calc(50% - 1rem);
+  }
+
+  .producthunt-badges {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .testimonials {
+    width: auto;
+    -webkit-box-sizing: initial;
+            box-sizing: initial;
+  }
+
+  .testimonial-card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 calc(25% - 1rem);
+            flex: 0 1 calc(25% - 1rem);
+  }
+
+  .testimonials h3 {
+    font-size: 2.5em;
+  }
+}
   </style>
 </head>
 <body>
@@ -537,7 +755,7 @@ a.green-btn-style:hover {
     <svg style="width: 20px; margin-right: 6px;" class="svg-inline--fa fa-shopping-cart fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="shopping-cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z"></path></svg><span> Get CSS Scan</span>
   </a>
   <div class="sharethis-inline-share-buttons" style="margin-top: 3em;"></div>
-  <ul>
+  <ul id="main-ul">
   </ul>
   <script>
     const isMac = navigator.appVersion.indexOf("Mac") != -1
@@ -982,6 +1200,87 @@ a.green-btn-style:hover {
 
     gtag('config', 'G-FJYYZC87DK');
   </script>
+
+  <section class="testimonials" id="testimonials">
+    <h3>Trusted by thousands</h3>
+    <p class="subtitle">Get ready to join 20,000+ professional web developers from 116 countries using <a href="https://getcssscan.com/?ref=beautifulboxshadow_social" target="_blank">CSS Scan</a> every day to deliver world-class websites.<br>
+      <span class="stars">
+        <svg class="svg-inline--fa fa-star fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><svg class="svg-inline--fa fa-star fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><svg class="svg-inline--fa fa-star fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><svg class="svg-inline--fa fa-star fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><svg class="svg-inline--fa fa-star fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg> on Gumroad
+      </span>
+    <br>
+    <a href="https://getcssscan.com/?ref=beautifulboxshadow_social" class="get-cssscan" target="_blank">
+      <svg style="width: 20px; margin-right: 6px;" class="svg-inline--fa fa-shopping-cart fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="shopping-cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z"></path></svg><span> Get CSS Scan</span>
+    </a>
+    <ul class="testimonials-list">
+      <li class="testimonial-card" id="brad">
+        <div class="testimonial-body">
+          <p class="testimonial-quote">"This was an easy buy"</p>
+          <p class="testimonial-author">Brad Frost · Creator of Atomic Design</p>
+        </div>
+      </li>
+      <li class="testimonial-card" id="flavio">
+        <div class="testimonial-body">
+          <p class="testimonial-quote">"It's a very useful Chrome/FF extension for me"</p>
+          <p class="testimonial-author">Flavio Copes · flaviocopes.com</p>
+        </div>
+      </li>
+      <li class="testimonial-card" id="joulse">
+        <div class="testimonial-body">
+          <p class="testimonial-quote">"Very useful! I do not even count the time I had to inspect each element"</p>
+          <p class="testimonial-author">Joulse · Senior Frontend Developer | OpenMakers | Shortcutly</p>
+        </div>
+      </li>
+      <li class="testimonial-card" id="harry">
+        <div class="testimonial-body">
+          <p class="testimonial-quote">"After seeing the benefits of CSS Scan there's no way I could go back to Inspecting elements through dev tools. It's a game changer"</p>
+          <p class="testimonial-author">Harry Dry · Marketing Examples</p>
+        </div>
+      </li>
+      <li class="testimonial-card" id="awais">
+        <div class="testimonial-body">
+          <p class="testimonial-quote">"The best developer-productivity product of 2019. Should be a browser default!"</p>
+          <p class="testimonial-author">Ahmad Awais · VSCode.pro | Google Dev Expert</p>
+        </div>
+      </li>
+      <li class="testimonial-card" id="max">
+        <div class="testimonial-body">
+          <p class="testimonial-quote">"CSS Scan by @gvrizzo: Hover over any element and copy its entire CSS rules with a single click 😍😍😍
+
+          So useful for frontend work"</p>
+          <p class="testimonial-author">Max Stoiber · Stellate | styled-components | react-boilerplate</p>
+        </div>
+      </li>
+      <li class="testimonial-card" id="joe">
+        <div class="testimonial-body">
+          <p class="testimonial-quote">"This tool is insane. Instabuy."</p>
+          <p class="testimonial-author">Joe Casabona · Author of HTML and CSS: Visual QuickStart Guide</p>
+        </div>
+      </li>
+      <li class="testimonial-card" id="anne">
+        <div class="testimonial-body">
+          <p class="testimonial-quote">"I was told "but there are free funky extensions that tell you the CSS". Yeah. There are. And they don't evolve. CSS Scan does, and that is why I don't mind paying!"</p>
+          <p class="testimonial-author">Anne Bovelett · Consultant for digital accessibility and inclusion</p>
+        </div>
+      </li>
+    </ul>
+    <div class="producthunt-badges">
+      <div class="producthunt-badge-wrapper">
+        <a href="https://getcssscan.com/?ref=beautifulboxshadow_social_ph" target="_blank" rel="noopener noreferrer">
+          <img src="https://getcssscan.com/img/ph-badge-month.png" alt="Product Hunt Badge: Product of the Month (3rd place)">
+        </a>
+      </div>
+      <div class="producthunt-badge-wrapper">
+        <a href="https://getcssscan.com/?ref=beautifulboxshadow_social_ph" target="_blank" rel="noopener noreferrer">
+          <img src="https://getcssscan.com/img/ph-badge-week.png" alt="Product Hunt Badge: Product of the Week (1st place)">
+        </a>
+      </div>
+      <div class="producthunt-badge-wrapper">
+        <a href="https://getcssscan.com/?ref=beautifulboxshadow_social_ph" target="_blank" rel="noopener noreferrer">
+          <img src="https://getcssscan.com/img/ph-badge-day.png" alt="Product Hunt Badge: Product of the Day (1st place)">
+        </a>
+      </div>
+    </div>
+  </section>
 
   <a class="cssscan-a" href="https://getcssscan.com?ref=beautifulboxshadow-bottom" target="_blank">
     <div class="cssscan">
